@@ -8,6 +8,7 @@ inputs:
   solution:
     description: Solution path and solution file name
     required: true
+    default: VALUEMISSING
    configuration:
      description: configuration parameter for dotnet
      required: true
@@ -15,9 +16,11 @@ inputs:
    test-location:
      description: location of test files
      required: true
+     default: VALUEMISSING
    cs-proj-file:
      description: cs proj file to created files for publishing
      required: true
+     default: VALUEMISSING
    published-files:
      description: name of published files
      required: true
