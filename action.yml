@@ -8,7 +8,7 @@ inputs:
   solution:
     description: Solution path and solution file name
     required: true
-  configuration:
+  config:
      description: configuration parameter for dotnet
      required: true
      default: Release
@@ -38,7 +38,7 @@ runs:
       run: dotnet restore "${{ inputs.solution }}"
     
     - name: Build
-      run: dotnet build "${{ inputs.solution }}" --configuration ${{ inputs.configuration }} --no-restore
+      run: dotnet build "${{ inputs.solution }}" --configuration ${{ inputs.config }} --no-restore
     
     - name: Test
       run: |
@@ -54,7 +54,7 @@ runs:
       
     - name: Publish
       run: |
-        dotnet publish "${{ inputs.cs-proj-file }}" -c ${{ inputs.configuration }} -o ${{ inputs. published-files }
+        dotnet publish "${{ inputs.cs-proj-file }}" -c ${{ inputs.config }} -o ${{ inputs. published-files }
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
