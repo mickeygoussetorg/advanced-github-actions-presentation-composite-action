@@ -1,10 +1,6 @@
 name: 'Build Test .NET App'
 description: 'I build, test, and upload artifacts for a .NET web app.  I am used as part of the Advanced GitHub Actions Talk'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   dotnet-version:
     description: Version of .NET Core to use
     required: true
@@ -26,22 +22,10 @@ inputs:
      description: name of published files
      required: true
      default: myapp
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
-      shell: bash
-      
-###################################################################      
+    
     - uses: actions/checkout@v2
       
     - name: Setup .NET Core
