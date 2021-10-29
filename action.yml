@@ -8,20 +8,18 @@ inputs:
   solution:
     description: Solution path and solution file name
     required: true
-    default: VALUEMISSING
-   configuration:
+  configuration:
      description: configuration parameter for dotnet
      required: true
      default: Release
-   test-location:
+  test-location:
      description: location of test files
      required: true
-     default: VALUEMISSING
-   cs-proj-file:
+  cs-proj-file:
      description: cs proj file to created files for publishing
      required: true
      default: VALUEMISSING
-   published-files:
+  published-files:
      description: name of published files
      required: true
      default: myapp
